@@ -65,6 +65,7 @@ jobs:
       - name: attach-images
         env:
           RELEASE: ${{ github.event.inputs.release }}
+          GH_TOKEN: ${{ github.token }}
         run: |
           gh release upload "${RELEASE}" \
             _out/cloud-images.json
